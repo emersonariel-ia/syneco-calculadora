@@ -1,0 +1,32 @@
+{
+  "history": [
+    {
+      "id": 1,
+      "operand1": 5,
+      "operator": "x",
+      "operand2": 5,
+      "resultado": "25"
+    },
+    {
+      "id": 2,
+      "operand1": 9,
+      "operator": "-",
+      "operand2": 5,
+      "resultado": "4"
+    },
+    {
+      "id": 3,
+      "operand1": 7,
+      "operator": "x",
+      "operand2": 8,
+      "resultado": "56"
+    },
+    {
+      "id": 4,
+      "operand1": 9,
+      "operator": "x",
+      "operand2": 50,
+      "resultado": "450"
+    }
+  ]
+}
