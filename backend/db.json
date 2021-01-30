@@ -9,24 +9,31 @@
     },
     {
       "id": 2,
-      "operand1": 9,
-      "operator": "-",
-      "operand2": 5,
-      "resultado": "4"
+      "operand1": 900,
+      "operator": "/",
+      "operand2": 61.56,
+      "resultado": "14,6198"
     },
     {
       "id": 3,
-      "operand1": 7,
+      "operand1": 59,
       "operator": "x",
-      "operand2": 8,
-      "resultado": "56"
+      "operand2": 651,
+      "resultado": "38409"
     },
     {
       "id": 4,
-      "operand1": 9,
-      "operator": "x",
-      "operand2": 50,
-      "resultado": "450"
+      "operand1": 65,
+      "operator": "-",
+      "operand2": 62.169,
+      "resultado": "2,83100"
+    },
+    {
+      "id": 5,
+      "operand1": 65.1,
+      "operator": "+",
+      "operand2": 216.33,
+      "resultado": "281,43"
     }
   ]
 }

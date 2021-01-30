@@ -37,7 +37,7 @@ export class AppComponent {
   }
 
   mostraTodoCalculo() {
-    this.exibirDadosAnteriores =  this.operand1 + this.operator  + this.operand2 + " ="
+    this.exibirDadosAnteriores =  this.operand1.toString().replace(".", ",") + this.operator  + this.operand2.toString().replace(".", ",") + " ="
     return this.exibirDadosAnteriores
   }
 
@@ -60,7 +60,6 @@ export class AppComponent {
 
 
   pressKey(key: string) {
-    
     if (this.answered == true){
       this.answered = false
       this.displayText = ''
@@ -71,41 +70,45 @@ export class AppComponent {
       return;
     }
     this.displayText += key;
-    console.log(this.displayText)
   }
   
   pressOperator(key){
+    this.displayText = this.displayText.replace(',', '.')
     this.operand1 = parseFloat(this.displayText);
     this.displayText = '';
     this.operator = key;
   }
-
+  
   allClear() {
     this.displayText = '';
     this.operatorSet = false;
     this.exibirDadosAnteriores = ''
   }
-
+  
   getAnswer() {
-
+    
+    this.displayText = this.displayText.replace(',', '.')
     this.operand2 = parseFloat(this.displayText);
-    if (this.operator === '/') {
-      
+
+    if (this.operator === '/') {      
       this.displayText = (this.operand1 / this.operand2).toString().replace(".", ",");
       if (this.displayText.length > 7) {
         this.displayText = this.displayText.substr(0, 7);
       }
     } else if (this.operator === 'x') {
-      this.displayText = (this.operand1 * this.operand2).toString().replace(".", ",");
+        this.displayText = (this.operand1 * this.operand2).toString().replace(".", ",");
       if (this.displayText.length > 7) {
-        this.displayText = 'ERROR';
+        this.displayText = this.displayText.substr(0, 7);
       }
     } else if (this.operator === '-') {
       this.displayText = (this.operand1 - this.operand2).toString().replace(".", ",");
-    } else if (this.operator === '+') {
+      if (this.displayText.length > 7) {
+        this.displayText = this.displayText.substr(0, 7);
+      }
+    } else if (this.operator === '+') {      
       this.displayText = (this.operand1 + this.operand2).toString().replace(".", ",");
       if (this.displayText.length > 7) {
-        this.displayText = 'ERROR';
+        this.displayText = this.displayText.substr(0, 7);
       }
     } else {
       this.displayText = 'ERROR: Invalid Operation';
